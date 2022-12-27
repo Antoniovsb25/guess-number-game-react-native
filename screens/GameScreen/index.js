@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Alert } from "react-native";
 import Title from "../../components/Title";
 import NumberContainer from "../../components/NumberContainer";
 import PrimaryButton from "../../components/PrimaryButton";
+import Card from "../../components/Card";
+import InstructionText from "../../components/InstructionText";
 
 let minBoundary = 1;
 let maxBoundary = 100;
@@ -57,8 +59,8 @@ function GameScreen({ userNumber, onGameOver }) {
     <View style={styles.screen}>
       <Title>Opponent's Guess</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
-      <View>
-        <Text>Higher or lower?</Text>
+      <Card>
+        <InstructionText>Higher or lower?</InstructionText>
         <View>
           <PrimaryButton onPress={() => nextGuessHandler("higher")}>
             +
@@ -67,7 +69,7 @@ function GameScreen({ userNumber, onGameOver }) {
             -
           </PrimaryButton>
         </View>
-      </View>
+      </Card>
       <View>
         <Text>LOG ROUNDS</Text>
       </View>
